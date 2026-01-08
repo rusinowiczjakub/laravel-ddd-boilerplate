@@ -1,17 +1,24 @@
-# Notifyhub
+# DDD + CQRS Laravel Boilerplate
 
-Backend API for NotifyHub platform built with Laravel 12, following Domain-Driven Design (DDD), CQRS, and Clean Architecture principles.
+A production-ready foundation for building modern applications with Laravel 12, following Domain-Driven Design (DDD), CQRS, and Clean Architecture principles.
+
+## Features
+
+- **Multi-tenant Workspaces** - Team management with roles, invitations, and ownership transfer
+- **Authentication** - Email/password auth with email verification, 2FA, and password recovery
+- **Stripe Billing** - Subscription management, usage tracking, and billing portal
+- **Clean Architecture** - DDD, CQRS, domain events, and proper separation of concerns
 
 ## Tech Stack
 
 - **Backend**: Laravel 12, PHP 8.4
 - **Frontend**: React 19, Inertia.js v2, TypeScript
-- **Styling**: Tailwind CSS v4
-- **Database**: MySQL/PostgreSQL (UUID primary keys)
-- **Authentication**: Laravel Sanctum (token-based API auth)
-- **Testing**: Pest (PHP), PHPUnit
+- **Styling**: Tailwind CSS v4, shadcn/ui
+- **Database**: PostgreSQL (UUID primary keys)
+- **Authentication**: Laravel session-based auth with 2FA
+- **Payments**: Stripe (subscriptions, billing portal)
+- **Testing**: Pest
 - **Code Quality**: Laravel Pint, Larastan
-- **Deployment**: Laravel Sail (Docker)
 
 ## Architecture
 
@@ -20,34 +27,56 @@ This application follows strict architectural principles:
 - **Domain-Driven Design (DDD)** - Clear domain boundaries with separate modules
 - **CQRS** - Command/Query separation with dedicated handlers
 - **Clean Architecture** - Domain, Application, Infrastructure layers
-- **Event Sourcing** - Domain events for critical business operations
+- **Domain Events** - Event-driven communication between modules
 - **Repository Pattern** - Abstraction over data persistence
 - **Value Objects** - Type safety and domain validation
-- **Immutability** - Readonly classes for Commands, Queries, Responses, ValueObjects
 
 ## Project Structure
 
 ```
 src/
-├── {Module}/
+├── Core/                    # CQRS infrastructure (Bus, Handlers)
+├── Shared/                  # Shared kernel (BaseModel, etc.)
+├── IAM/                     # Identity & Access Management
 │   ├── Domain/
-│   │   ├── ValueObjects/
-│   │   ├── Services/
-│   │   ├── Repositories/
-│   │   ├── Events/
-│   │   └── Exceptions/
 │   ├── Application/
-│   │   ├── Commands/
-│   │       ├── SomeCommand.php
-│   │       └── SomeCommandHandler.php
-│   │   ├── Queries/
-│   │       ├── SomeQuery.php
-│   │       └── SomeQueryHandler.php
-│   │   └── Responses/
 │   └── Infrastructure/
-│       ├── Services/
-│       ├── Repositories/
-│       └── Framework/
+├── Workspaces/              # Multi-tenant workspaces
+│   ├── Domain/
+│   ├── Application/
+│   └── Infrastructure/
+└── Billing/                 # Stripe billing integration
+    ├── Domain/
+    ├── Application/
+    └── Infrastructure/
+
+app/                         # Laravel app (Controllers, Middleware)
+resources/js/                # React frontend
+```
+
+### Module Structure
+
+```
+{Module}/
+├── Domain/
+│   ├── Models/              # Domain entities
+│   ├── ValueObjects/        # Immutable value objects
+│   ├── Events/              # Domain events
+│   ├── Repositories/        # Repository interfaces
+│   ├── Services/            # Domain services
+│   └── Exceptions/          # Domain exceptions
+├── Application/
+│   ├── Commands/            # Command + Handler pairs
+│   ├── Queries/             # Query + Handler pairs
+│   ├── Responses/           # DTOs for query results
+│   └── Listeners/           # Event listeners
+└── Infrastructure/
+    ├── Models/              # Eloquent models
+    ├── Repositories/        # Repository implementations
+    ├── Framework/
+    │   ├── Providers/       # Service providers
+    │   └── Migrations/      # Database migrations
+    └── Services/            # External service integrations
 ```
 
 ## Installation
@@ -55,7 +84,7 @@ src/
 ```bash
 # Clone repository
 git clone <repository-url>
-cd driply
+cd project
 
 # Install dependencies
 composer install
@@ -78,7 +107,7 @@ npm run build
 ## Development
 
 ```bash
-# Start development server
+# Start development server (runs Laravel + Vite concurrently)
 composer run dev
 
 # Run tests
@@ -91,33 +120,37 @@ composer run dev
 ./vendor/bin/phpstan analyse
 ```
 
-## API Documentation
+## Environment Variables
 
-API is available on subdomain `api.{domain}` (e.g., `api.localhost`)
+Key environment variables to configure:
 
-- **Authentication**: Phone-based verification via Twilio
-- **Authorization**: Sanctum token-based authentication
-- **Format**: JSON-only responses
+```env
+# Application
+APP_NAME="Your App Name"
+APP_URL=http://localhost
 
-### Authentication Endpoints
+# Database
+DB_CONNECTION=pgsql
+DB_HOST=pgsql
+DB_DATABASE=your_database
 
+# Stripe
+STRIPE_KEY=pk_test_...
+STRIPE_SECRET=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+# Mail
+MAIL_MAILER=smtp
+MAIL_HOST=mailpit
 ```
-POST   /auth/send-code           - Send verification code to phone
-POST   /auth/verify-code         - Verify code and authenticate
-GET    /auth/me                  - Get authenticated user (protected)
-POST   /auth/logout              - Logout current session (protected)
-POST   /auth/complete-onboarding - Complete user onboarding (protected)
-```
 
-## Modules
+## Creating New Modules
 
-### ✅ Authentication
-Phone-based authentication with Twilio Verify API v2
-- SMS verification codes
-- Sanctum token authentication
-- User onboarding flow
-- No password authentication
+1. Create module structure in `src/YourModule/`
+2. Create service provider in `Infrastructure/Framework/Providers/`
+3. Register provider in `bootstrap/providers.php`
+4. Create migrations in `Infrastructure/Framework/Migrations/`
 
 ## License
 
-Proprietary - All rights reserved
+MIT License
