@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Tests
+tests
+phpunit.xml
+.phpunit.result.cache
+
+# Development
+.env.example
+.editorconfig
+docker-compose.yml
+docker/8.4
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Storage (will be mounted as volume)
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+
+# Build artifacts
+public/hot
+public/build
+public/storage
+
+# Vendor (will be installed during build)
+vendor

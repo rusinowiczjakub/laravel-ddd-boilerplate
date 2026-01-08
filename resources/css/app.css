@@ -1,0 +1,487 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@source "../views";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --success: oklch(0.649 0.166 162.48);
+    --success-foreground: oklch(0.985 0 0);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.87 0 0);
+    --chart-1: oklch(0.649 0.166 162.48);
+    --chart-2: oklch(0.55 0.12 162.48);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.87 0 0);
+}
+
+.dark {
+    --background: oklch(0.21 0 0); /* neutral-900 */
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.24 0 0); /* slightly lighter for cards */
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.21 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.3 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.3 0 0);
+    --muted-foreground: oklch(0.65 0 0); /* more subtle muted text */
+    --accent: oklch(0.3 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --success: oklch(0.649 0.166 162.48);
+    --success-foreground: oklch(0.145 0 0);
+    --border: oklch(0.3 0 0); /* more subtle borders */
+    --input: oklch(0.3 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.65 0.18 162.48);
+    --chart-2: oklch(0.50 0.12 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.21 0 0); /* neutral-900 */
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary-foreground: oklch(0.205 0 0);
+    --sidebar-accent: oklch(0.3 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.3 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .animate-pulse-slow {
+        animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Marquee animation for landing page */
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee var(--marquee-duration, 40s) linear infinite;
+    }
+
+    /* SVG line drawing animation */
+    @keyframes draw-line {
+        from {
+            stroke-dashoffset: 1000;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .animate-draw-line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: draw-line 1.5s ease-out forwards;
+    }
+
+    /* Gradient blob animation */
+    @keyframes blob-float {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        33% {
+            transform: translate(30px, -30px) scale(1.1);
+        }
+        66% {
+            transform: translate(-20px, 20px) scale(0.9);
+        }
+    }
+
+    .animate-blob {
+        animation: blob-float 8s ease-in-out infinite;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        .animate-marquee,
+        .animate-blob,
+        .animate-pulse-slow,
+        .animate-draw-line {
+            animation: none;
+        }
+
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+
+    /* Custom scrollbar for email builder */
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--foreground) / 0.2) transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: hsl(var(--foreground) / 0.2);
+        border-radius: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--foreground) / 0.3);
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/*
+  ---break---
+*/
+@theme inline {
+    --color-sidebar:
+        var(--sidebar);
+    --color-sidebar-foreground:
+        var(--sidebar-foreground);
+    --color-sidebar-primary:
+        var(--sidebar-primary);
+    --color-sidebar-primary-foreground:
+        var(--sidebar-primary-foreground);
+    --color-sidebar-accent:
+        var(--sidebar-accent);
+    --color-sidebar-accent-foreground:
+        var(--sidebar-accent-foreground);
+    --color-sidebar-border:
+        var(--sidebar-border);
+    --color-sidebar-ring:
+        var(--sidebar-ring);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  /*
+  ---break---
+*/
+  @keyframes accordion-down {
+    from {
+      height: 0;
+        }
+    to {
+      height: var(--radix-accordion-content-height);
+        }
+    }
+  /*
+  ---break---
+*/
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+        }
+    to {
+      height: 0;
+        }
+    }
+}
+/*
+  ---break---
+*/
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+
+/* Documentation content styles */
+.docs-content {
+    max-width: none;
+    color: #d4d4d4;
+    line-height: 1.75;
+}
+
+.docs-content h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+.docs-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    scroll-margin-top: 5rem;
+}
+
+.docs-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.docs-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.docs-content p {
+    margin-bottom: 1.25rem;
+    color: #a3a3a3;
+}
+
+.docs-content .lead {
+    font-size: 1.25rem;
+    color: #d4d4d4;
+    margin-bottom: 2rem;
+}
+
+.docs-content a {
+    color: #34d399;
+    text-decoration: none;
+}
+
+.docs-content a:hover {
+    text-decoration: underline;
+}
+
+.docs-content strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.docs-content code {
+    background: rgba(255, 255, 255, 0.1);
+    color: #6ee7b7;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family: var(--font-mono);
+}
+
+.docs-content pre code {
+    background: transparent;
+    padding: 0;
+}
+
+.docs-content ul,
+.docs-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    color: #a3a3a3;
+}
+
+.docs-content ul {
+    list-style-type: disc;
+}
+
+.docs-content ol {
+    list-style-type: decimal;
+}
+
+.docs-content li {
+    margin-bottom: 0.5rem;
+}
+
+.docs-content li::marker {
+    color: #525252;
+}
+
+.docs-content blockquote {
+    border-left: 4px solid #34d399;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #d4d4d4;
+    font-style: italic;
+}
+
+.docs-content hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+.docs-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.docs-content th,
+.docs-content td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.docs-content th {
+    color: #737373;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.docs-content td {
+    color: #d4d4d4;
+}

@@ -1,0 +1,296 @@
+{
+    "nav": {
+        "gallery": "Galeria",
+        "unique": "Unikalność",
+        "forDesigners": "Dla designerów",
+        "joinWaitlist": "Dołącz do listy"
+    },
+    "homepage": {
+        "title": "Unikalne Plakaty od Najlepszych Artystów",
+        "announcement": {
+            "discount": "30% zniżki",
+            "text": "na pierwsze 3 zamówienia dla pierwszych 100 klientów",
+            "spotsLeft": "Zostało {{count}} miejsca"
+        },
+        "hero": {
+            "badge": "Już wkrótce - zapisz się na listę oczekujących",
+            "title": "Odkryj poster-arts najlepszych",
+            "titleHighlight": "artystów ze świata",
+            "subtitle": "Odkryj ekskluzywne plakaty, które odmienią Twoje wnętrze.<br />Wszystkie najlepsze prace w Zen Arts.",
+            "emailPlaceholder": "Twój adres email",
+            "submitButton": "Zapisz się na listę",
+            "submitting": "Zapisuję...",
+            "successTitle": "Jesteś na liście!",
+            "successMessage": "Poinformujemy Cię mailem, gdy platforma będzie gotowa. Twój 30% kod rabatowy czeka!",
+            "note": "Bądź pierwszą osobą, która dowie się o uruchomieniu platformy i zdobądź 30% zniżki",
+            "features": {
+                "unique": "Unikalne projekty",
+                "premium": "Premium jakość 200g/m²",
+                "freeShipping": "Darmowa dostawa"
+            }
+        },
+        "stats": {
+            "artists": "Utalentowanych Artystów",
+            "designs": "Unikalnych Wzorów",
+            "paper": "Premium Papier",
+            "shipping": "Darmowa Dostawa"
+        },
+        "gallery": {
+            "title": "Twoje ściany, nowa energia",
+            "subtitle": "Zobacz jak unikalne plakaty odmienią Twoje wnętrze",
+            "rooms": {
+                "livingRoom": "Salon dzienny",
+                "bedroom": "Sypialnia",
+                "office": "Domowe biuro",
+                "dining": "Jadalnia"
+            }
+        },
+        "unique": {
+            "title": "Plakaty, których nie znajdziesz nigdzie indziej",
+            "subtitle": "Zen Arts to pierwsza w Polsce platforma łącząca najlepszych designerów z miłośnikami sztuki. Każdy projekt to unikalne dzieło, stworzone specjalnie dla naszej społeczności.",
+            "features": {
+                "exclusive": {
+                    "title": "Ekskluzywne projekty",
+                    "description": "Nie masówka z Ikei czy Pepco. To autorskie dzieła polskich i zagranicznych artystów, dostępne tylko u nas."
+                },
+                "support": {
+                    "title": "Wspieraj twórców",
+                    "description": "70% z każdej sprzedaży trafia do artysty. Kupując plakat, bezpośrednio wspierasz kreatywną scenę."
+                },
+                "quality": {
+                    "title": "Premium jakość",
+                    "description": "Druk na wysokogatunkowym papierze 200g/m². Kolory żywe przez lata, gwarancja satysfakcji."
+                }
+            }
+        },
+        "benefits": {
+            "title": "Dlaczego Zen Arts?",
+            "worldwide": {
+                "title": "Artyści z całego świata",
+                "description": "Projekty od najlepszych designerów z Polski i zagranicy"
+            },
+            "shipping": {
+                "title": "Darmowa dostawa",
+                "description": "Bezpłatna wysyłka w całej Polsce, tracking przesyłki"
+            },
+            "newDesigns": {
+                "title": "Nowe projekty co tydzień",
+                "description": "Regularnie dodajemy świeże wzory od nowych artystów"
+            }
+        },
+        "testimonials": {
+            "title": "Co mówią nasi przyszli klienci",
+            "subtitle": "Zobacz, dlaczego warto czekać na start",
+            "items": [
+                {
+                    "quote": "\"Wreszcie! Platforma z unikalnymi plakatami, których nie znajdę w każdym sklepie. Czekam niecierpliwie!\"",
+                    "name": "Ania",
+                    "role": "Miłośniczka sztuki"
+                },
+                {
+                    "quote": "\"Wspieram lokalnych artystów i dostaję piękne plakaty do domu. Świetny pomysł!\"",
+                    "name": "Michał",
+                    "role": "Kolekcjoner"
+                },
+                {
+                    "quote": "\"30% zniżki na start to super deal. Już wybrałem sobie kategorię Abstract!\"",
+                    "name": "Kasia",
+                    "role": "Design Enthusiast"
+                }
+            ]
+        },
+        "cta": {
+            "badge": "Zapisz się na listę oczekujących",
+            "title": "Nie przegap startu!",
+            "subtitle": "Zapisz się teraz i zyskaj 30% zniżki na pierwsze 3 zamówienia",
+            "emailPlaceholder": "Twój adres email",
+            "submitButton": "Zapisz się",
+            "submitting": "Zapisuję...",
+            "note": "Bądź w pierwszej setce i zaoszczędź 30%",
+            "successTitle": "Jesteś na liście!",
+            "successMessage": "Poinformujemy Cię mailem, gdy platforma będzie gotowa do startu."
+        }
+    },
+    "designerLanding": {
+        "title": "Zarabiaj na swoich projektach",
+        "nav": {
+            "forCustomers": "Dla klientów",
+            "howItWorks": "Jak to działa",
+            "benefits": "Korzyści"
+        },
+        "announcement": {
+            "commission": "90% prowizji",
+            "text": "dla pierwszych 100 osób z listy oczekujących",
+            "spotsLeft": "Zostało {{count}} miejsc"
+        },
+        "hero": {
+            "badge": "Już wkrótce - zapisz się na listę oczekujących",
+            "title1": "Twórz designy.",
+            "title2": "Zarabiaj",
+            "titleHighlight": "bez wysiłku.",
+            "subtitle": "Wgraj swój projekt plakatu, a my zajmiemy się produkcją, sprzedażą i wysyłką. Ty po prostu obserwuj jak rosną Twoje zarobki.",
+            "emailPlaceholder": "Twój adres email",
+            "submitButton": "Zapisz się na listę",
+            "submitting": "Zapisuję...",
+            "successTitle": "Jesteś na liście!",
+            "successMessage": "Poinformujemy Cię mailem, gdy platforma będzie gotowa do startu.",
+            "note": "Bądź pierwszą osobą, która dowie się o uruchomieniu platformy",
+            "features": {
+                "free": "Darmowa rejestracja",
+                "noFees": "Bez ukrytych opłat",
+                "payout": "Wypłata w 48h"
+            }
+        },
+        "stats": {
+            "commission": {
+                "label": "Prowizja dla designera",
+                "value": "70% ze sprzedaży"
+            },
+            "cost": {
+                "label": "Koszt dołączenia",
+                "value": "0 zł - całkowicie za darmo"
+            },
+            "availability": {
+                "label": "Dostępność",
+                "value": "Sprzedaż 24/7 bez przerwy"
+            },
+            "earnings": {
+                "label": "Limit zarobków",
+                "value": "Bez ograniczeń"
+            }
+        },
+        "caseStudy": {
+            "title": "Tak to działa w praktyce",
+            "subtitle": "Wgrywasz swój projekt plakatu, a my zajmiemy się produkcją, sprzedażą i wysyłką. Ty obserwujesz saldo — wypłacasz, kiedy chcesz.",
+            "metrics": {
+                "sales": "Sprzedaże",
+                "earnings": "Zarobek",
+                "upload": "Upload"
+            },
+            "steps": {
+                "title": "Jeden design = pasywny dochód",
+                "upload": {
+                    "title": "Wgraj design .PSD w 5 minut",
+                    "description": "Dodaj plik i tytuł. System sam tworzy podglądy i mockupy."
+                },
+                "acceptance": {
+                    "title": "Akceptacja",
+                    "description": "Sprawdzamy jakość i prawa autorskie. Po akceptacji produkt jest dostępny w sklepie 24/7."
+                },
+                "sales": {
+                    "title": "Sprzedaż i realizacja",
+                    "description": "Zamówienia przekazujemy do druku i wysyłki. Ty nie musisz nic robić."
+                },
+                "payout": {
+                    "title": "Saldo i wypłata",
+                    "description": "Wpływy trafiają najpierw do „Oczekujące\" (na czas zwrotów), potem do „Dostępne\". Wypłacasz na żądanie, max 1x/msc."
+                }
+            },
+            "cta": "Chcę zarabiać"
+        },
+        "testimonials": {
+            "title": "Głosy od twórców",
+            "subtitle": "Zobacz, co mówią designerzy, z którymi rozmawialiśmy",
+            "items": [
+                {
+                    "quote": "\"Super pomysł – w końcu ktoś zrobił platformę, gdzie nie muszę ogarniać drukarni ani wysyłki!\"",
+                    "name": "Mateusz",
+                    "role": "Ilustrator"
+                },
+                {
+                    "quote": "\"Dokładnie tego potrzebowałam. Tworzę designy, ale sprzedaż i obsługa klienta to nie moja bajka.\"",
+                    "name": "Kasia",
+                    "role": "Grafik"
+                },
+                {
+                    "quote": "\"70% prowizji i zero obsługi? To brzmi jak marzenie. Czekam na start!\"",
+                    "name": "Adam",
+                    "role": "Designer"
+                }
+            ]
+        },
+        "socialProof": {
+            "text": "Dołącz do <strong>pierwszych 100 designerów</strong>, którzy już są w kolejce",
+            "supportedTools": "Dodawaj designy stworzone w:"
+        },
+        "forWho": {
+            "title": "Dla kogo jest ta platforma?",
+            "subtitle": "Jeśli tworzysz projekty graficzne, ta platforma jest dla Ciebie",
+            "designers": {
+                "title": "Dla grafików",
+                "description": "Chcesz zarabiać pasywnie na swoich projektach bez zarządzania sklepem i logistyką? Wgraj design i zapomnij o reszcie."
+            },
+            "illustrators": {
+                "title": "Dla ilustratorów",
+                "description": "Chcesz dotrzeć z autorskimi ilustracjami do szerokiej grupy odbiorców? Sprzedawaj w całej Europie bez wysiłku."
+            },
+            "photographers": {
+                "title": "Dla fotografów",
+                "description": "Chcesz sprzedawać swoje zdjęcia jako wysokiej jakości plakaty? My zajmiemy się drukiem i wysyłką w najlepszej jakości."
+            }
+        },
+        "mockups": {
+            "title": "Tak Twoje prace będą wyglądały u klientów",
+            "subtitle": "Profesjonalne mockupy w realnych wnętrzach - automatycznie generowane z Twojego PSD",
+            "cta": "Zobacz swoje prace na ścianach klientów"
+        },
+        "faq": {
+            "title": "Najczęściej zadawane pytania",
+            "subtitle": "Wszystko, co musisz wiedzieć o platformie",
+            "items": {
+                "fee": {
+                    "q": "Czy muszę płacić coś za dodanie designu?",
+                    "a": "Nie! Dołączenie do platformy i dodawanie projektów jest całkowicie darmowe. Płacisz tylko wtedy, gdy zarabiasz – zabieramy prowizję ze sprzedaży (30% ceny końcowej). Bez ukrytych opłat, bez miesięcznych abonamentów."
+                },
+                "payout": {
+                    "q": "Kiedy dostanę pieniądze?",
+                    "a": "Gdy klient kupi Twój plakat, prowizja trafia najpierw do salda „Oczekujące\" (na czas ewentualnych zwrotów – zazwyczaj 14 dni). Potem kwota przechodzi do salda „Dostępne\" i możesz zlecić wypłatę, maksymalnie raz w miesiącu. Przelew realizujemy w ciągu 48 godzin."
+                },
+                "printing": {
+                    "q": "Kto zajmuje się drukiem i wysyłką?",
+                    "a": "My! Współpracujemy z drukarniami w Europie, które produkują plakaty w jakości premium (200g/m²). Gdy klient złoży zamówienie, automatycznie przekazujemy plik do druku i wysyłki. Ty nie musisz nic robić – śpisz spokojnie, a my realizujemy zamówienia."
+                },
+                "returns": {
+                    "q": "Co jeśli klient zwróci plakat?",
+                    "a": "Zajmujemy się całą obsługą zwrotów i reklamacji. Jeśli klient zwróci produkt w okresie zwrotów, po prostu anulujemy Twoją prowizję z tego zamówienia. Nie musisz się martwić ani kontaktować z klientem – wszystko leży po naszej stronie."
+                },
+                "removal": {
+                    "q": "Czy mogę usunąć swoje projekty?",
+                    "a": "Tak, w każdej chwili. Masz pełną kontrolę nad swoimi projektami w panelu designera. Możesz je edytować, dezaktywować lub całkowicie usunąć ze sklepu. Jeśli zdezaktywujesz projekt, nie będzie widoczny dla klientów, ale zachowasz historię sprzedaży."
+                },
+                "fileSize": {
+                    "q": "Jak duże pliki mogę wrzucić?",
+                    "a": "Z uwagi na to, że chcemy dostarczać najlepszą jakość druku dla naszych klientów, limit wielkości pliku jest maksymalnie duży dla dobrej jakości plików .PSD - 500 MB. Zalecamy formaty PSD, AI, PNG lub TIFF w wysokiej rozdzielczości (minimum 300 DPI). Im lepsza jakość pliku, tym lepiej będzie wyglądał wydruk. Nasz system automatycznie zweryfikuje jakość i da Ci znać, jeśli coś trzeba poprawić."
+                }
+            }
+        },
+        "cta": {
+            "badge": "Dołącz do listy oczekujących",
+            "title": "Zapisz się i zyskaj limitowane warunki",
+            "subtitle": "Zgłoś się już dziś i bądź w gronie pierwszych twórców, którzy zaczną zarabiać na swoich projektach.",
+            "emailPlaceholder": "Twój adres email",
+            "submitButton": "Zapisz się",
+            "submitting": "Zapisuję...",
+            "successTitle": "Jesteś na liście!",
+            "successMessage": "Poinformujemy Cię mailem, gdy platforma będzie gotowa do startu."
+        }
+    },
+    "footer": {
+        "description": "Pierwsza polska platforma łącząca utalentowanych designerów z miłośnikami sztuki.",
+        "platform": "Platforma",
+        "forCreators": "Dla twórców",
+        "becomeDesigner": "Zostań designerem",
+        "faq": "FAQ",
+        "legal": "Prawne",
+        "terms": "Regulamin",
+        "privacy": "Polityka prywatności",
+        "cookies": "Cookies",
+        "copyright": "© 2025 Zen Arts. Wszystkie prawa zastrzeżone.",
+        "product": "Produkt",
+        "howItWorks": "Jak to działa",
+        "benefits": "Korzyści",
+        "support": "Wsparcie",
+        "contact": "Kontakt",
+        "help": "Pomoc"
+    }
+}

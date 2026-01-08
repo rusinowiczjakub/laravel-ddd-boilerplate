@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+        {{-- Inline script to apply theme immediately (prevents flash) --}}
+        <script>
+            (function() {
+                const appearance = localStorage.getItem('theme') || 'system';
+
+                if (appearance === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else if (appearance === 'system') {
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+                // 'light' = no dark class (default)
+            })();
+        </script>
+
+        {{-- Inline style to set the HTML background color based on our theme in app.css --}}
+        <style>
+            html {
+                background-color: oklch(1 0 0);
+            }
+
+            html.dark {
+                background-color: oklch(0.145 0 0);
+            }
+        </style>
+
+        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+
+        <link rel="preconnect" href="https://fonts.bunny.net">
+{{--        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600|family=jetbrains-mono:400,500,600" rel="stylesheet" />--}}
+
+        @routes
+        @viteReactRefresh
+        @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
+        @inertiaHead
+    </head>
+    <body class="font-sans antialiased">
+        @inertia
+    </body>
+</html>

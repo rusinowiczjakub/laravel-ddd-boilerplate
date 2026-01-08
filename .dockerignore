@@ -1,0 +1,53 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Development
+.env
+.env.example
+.editorconfig
+docker-compose.yml
+docker/8.4
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+storage/logs/*
+!storage/logs/.gitignore
+
+# Cache
+storage/framework/cache/*
+!storage/framework/cache/.gitignore
+storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
+storage/framework/views/*
+!storage/framework/views/.gitignore
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+
+# Testing
+tests
+phpunit.xml
+.phpunit.result.cache
+
+# Build artifacts (will be built in container)
+public/hot
+public/storage
+
+# Vendor (will be installed in container)
+vendor

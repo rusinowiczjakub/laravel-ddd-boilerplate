@@ -1,0 +1,11 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\IAM\Domain\Exceptions;
+
+use Modules\Shared\Domain\Exceptions\DomainException;
+
+final class TwoFactorNotEnabledException extends DomainException
+{
+}
